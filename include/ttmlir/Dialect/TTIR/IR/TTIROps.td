@@ -639,6 +639,21 @@ def TTIR_MishOp: TTIR_ElementwiseUnaryOp<"mish"> {
   }];
 }
 
+def TTIR_TanhshrinkOp: TTIR_ElementwiseUnaryOp<"tanhshrink"> {
+  let summary = "Elementwise Tanhshrink operation.";
+  let description = [{
+    The `tanhshrink` operation computes the Tanhshrink function of each element in the input tensor.
+
+    Example:
+    ```mlir
+    // Compute Tanhshrink of all elements in %input
+    %result = ttir.tanhshrink(%input, %output) : tensor<4x4xf32>, tensor<4x4xf32> -> tensor<4x4xf32>
+    ```
+
+    Mathematical definition: tanhshrink(x) = x - tanh(x)
+  }];
+}
+
 
 def TTIR_NegOp: TTIR_ElementwiseUnaryOp<"neg", [TTIR_Involution]> {
     let summary = "Elementwise negate operation.";

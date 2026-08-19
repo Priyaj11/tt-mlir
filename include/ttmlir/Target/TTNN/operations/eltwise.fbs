@@ -162,6 +162,7 @@ enum EltwiseUnaryOpType: uint32 {
   Silu,
   Hardsigmoid,
   Mish,
+  Tanhshrink,
   Acos,
   Asin,
   Asinh

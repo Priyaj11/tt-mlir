@@ -654,6 +654,8 @@ auto getOpSymbol() {
     return WRAP_OP(::ttnn::silu);
   } else if constexpr (std::is_same_v<OpTy, MishOp>) {
     return WRAP_OP(::ttnn::mish);
+  } else if constexpr (std::is_same_v<OpTy, TanhshrinkOp>) {
+    return WRAP_OP(::ttnn::tanhshrink);
   } else {
     static_assert(ttmlir::utils::always_false(),
                   "add mapping from TTNN dialect to TTNN lib op");
@@ -1465,6 +1467,7 @@ template struct UnaryEltwiseOpModel<ReciprocalOp>;
 template struct UnaryEltwiseOpModel<CbrtOp>;
 template struct UnaryEltwiseOpModel<BitwiseNotOp>;
 template struct UnaryEltwiseOpModel<SiluOp>;
+template struct UnaryEltwiseOpModel<TanhshrinkOp>;
 template struct UnaryEltwiseWithFastApproxModeOpModel<MishOp>;
 template struct UnaryEltwiseWithFastApproxModeOpModel<Log1pOp>;
 template struct UnaryEltwiseOpModel<Expm1Op>;

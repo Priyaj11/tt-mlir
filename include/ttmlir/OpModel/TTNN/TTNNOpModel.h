@@ -218,6 +218,9 @@ template <>
 struct OpModel<MishOp> : UnaryEltwiseWithFastApproxModeOpModel<MishOp> {};
 
 template <>
+struct OpModel<TanhshrinkOp> : UnaryEltwiseOpModel<TanhshrinkOp> {};
+
+template <>
 struct OpModel<RsqrtOp> : UnaryEltwiseWithFastApproxModeOpModel<RsqrtOp> {};
 
 template <>

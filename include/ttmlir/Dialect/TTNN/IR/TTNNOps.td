@@ -537,6 +537,13 @@ def TTNN_MishOp : TTNN_ElementwiseUnaryOp<"mish"> {
   }];
 }
 
+def TTNN_TanhshrinkOp : TTNN_ElementwiseUnaryOp<"tanhshrink"> {
+  let summary = "Eltwise Tanhshrink.";
+  let description = [{
+    Eltwise Tanhshrink operation.
+  }];
+}
+
 def TTNN_LogOp : TTNN_ElementwiseUnaryOp<"log"> {
     let summary = "Eltwise logarithm.";
     let description = [{
